@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Portfolio - Safety Manhole</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* 애플 스타일의 기본 폰트 스택 및 안티앨리어싱 설정 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #fbfbfd; /* 애플 특유의 오프화이트 배경색 */
+            color: #1d1d1f; /* 진한 다크 그레이 텍스트 */
+        }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-black selection:text-white">
+
+    <!-- Navigation (Apple Style Blur) -->
+    <nav class="fixed w-full bg-white/70 backdrop-blur-lg border-b border-gray-200/50 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-semibold text-lg tracking-tight">SafetyManhole.</span>
+            <div class="hidden md:flex space-x-10 text-xs font-medium text-[#1d1d1f] tracking-wide">
+                <a href="#background" class="hover:text-blue-600 transition-colors">선정 배경</a>
+                <a href="#problem" class="hover:text-blue-600 transition-colors">문제점</a>
+                <a href="#research" class="hover:text-blue-600 transition-colors">데이터 분석</a>
+                <a href="#solution" class="hover:text-blue-600 transition-colors">솔루션</a>
+                <a href="#failsafe" class="hover:text-blue-600 transition-colors">유지보수</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-12 px-6 text-center max-w-5xl mx-auto flex flex-col items-center">
+        <h2 class="text-[#86868b] font-bold tracking-widest text-xs sm:text-sm mb-6 uppercase">Public UX Design Project</h2>
+        <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[1.1] mb-8">
+            세이프티 맨홀.<br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-500">생명을 구하는 지면.</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-[#86868b] max-w-3xl font-medium leading-relaxed mb-10">
+            우리는 평소에 맨홀을 밟고 지나가지만, 그것이 우리의 생명을 구할 수 있다고 생각하는 사람은 아무도 없습니다. 디자인의 역할은 이 당연함을 뒤집는 데 있습니다.
+        </p>
+    </section>
+
+    <!-- [사용자 교체용] 왜곡 방지 이미지 플레이스홀더 -->
+    <!-- object-cover 클래스가 적용되어 있어 어떤 비율의 사진을 넣어도 찌그러지지 않습니다. -->
+    <section class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-32">
+        <div class="relative w-full h-[50vh] md:h-[70vh] rounded-[2.5rem] overflow-hidden bg-gray-200 shadow-2xl">
+            <img 
+                src="./manhole.jpg" 
+                alt="메인 프로젝트 이미지" 
+                class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+            />
+        </div>
+    </section>
+
+    <!-- Background & Topic Selection (Apple Style Editorial) -->
+    <section id="background" class="py-32 px-6 border-t border-gray-200/50 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-[#86868b] font-bold tracking-widest text-xs sm:text-sm mb-16 uppercase text-center md:text-left">Background</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <!-- Left: Narrative -->
+                <div class="lg:col-span-5 flex flex-col justify-center">
+                    <h3 class="text-4xl md:text-5xl font-bold tracking-tight mb-8 leading-[1.2]">
+                        재난의 순간,<br/>가장 먼저 닿는 시선.
+                    </h3>
+                    <p class="text-xl text-[#86868b] leading-relaxed font-medium mb-8">
+                        평범한 일상 속 맨홀은 단순한 하수도 덮개에 불과합니다. 하지만 재난이라는 극한의 상황에서, 이 흔한 철제 덮개는 도시 전역을 촘촘히 잇는 <strong>생명의 '안내망'</strong>으로 변모할 잠재력을 가지고 있습니다.
+                    </p>
+                    <div class="pl-6 border-l-4 border-black">
+                        <p class="text-lg text-[#1d1d1f] font-semibold italic">
+                            "새로운 것을 세우는 대신,<br/>이미 있는 것의 가치를 다시 봅니다."
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Right: 3 Pillars of Selection -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="bg-[#f5f5f7] p-8 md:p-10 rounded-[2.5rem] flex flex-col md:flex-row gap-6 items-start hover:scale-[1.02] transition-transform duration-500">
+                        <div class="w-14 h-14 shrink-0 bg-white rounded-full flex items-center justify-center shadow-sm">
+                            <i data-lucide="map" class="text-black w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold mb-3 tracking-tight">압도적인 접근성</h4>
+                            <p class="text-[#86868b] font-medium leading-relaxed">맨홀은 도심 내 40~50m 간격으로 촘촘히 깔려있는 유비쿼터스(Ubiquitous) 인프라입니다. 점이 아닌 선으로 이어지는 지속적인 길잡이가 될 수 있습니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#f5f5f7] p-8 md:p-10 rounded-[2.5rem] flex flex-col md:flex-row gap-6 items-start hover:scale-[1.02] transition-transform duration-500">
+                        <div class="w-14 h-14 shrink-0 bg-white rounded-full flex items-center justify-center shadow-sm">
+                            <i data-lucide="eye" class="text-black w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold mb-3 tracking-tight">본능적 행동 유도</h4>
+                            <p class="text-[#86868b] font-medium leading-relaxed">위급 상황 시 연기를 피하거나 장애물을 살피기 위해 사람의 시선은 자연스럽게 바닥을 향합니다. 지면 디자인은 인간의 생존 본능에 가장 부합하는 인터페이스입니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#f5f5f7] p-8 md:p-10 rounded-[2.5rem] flex flex-col md:flex-row gap-6 items-start hover:scale-[1.02] transition-transform duration-500">
+                        <div class="w-14 h-14 shrink-0 bg-white rounded-full flex items-center justify-center shadow-sm">
+                            <i data-lucide="leaf" class="text-black w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold mb-3 tracking-tight">경제적 지속가능성</h4>
+                            <p class="text-[#86868b] font-medium leading-relaxed">거대한 구조물을 새로 신축할 필요가 없습니다. 기존 맨홀의 교체 주기에 맞춰 뚜껑 디자인만 변경함으로써 막대한 도시 예산을 절감할 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem (Apple Card Style) -->
+    <section id="problem" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">문제점. <br/><span class="text-[#86868b]">행동 특성과 인프라의 한계.</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-[#f5f5f7] rounded-[2.5rem] p-12 md:p-16 flex flex-col justify-between hover:scale-[1.02] transition-transform duration-500">
+                    <div>
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-sm">
+                            <i data-lucide="arrow-down" class="text-black w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold tracking-tight mb-4">시선 아래로의 고착</h3>
+                        <p class="text-lg text-[#86868b] leading-relaxed font-medium">
+                            재난 발생 시 심리적 위축으로 인해 사람의 시선은 평소 수평 시야보다 약 15~30도 아래를 향하게 됩니다. 나아가 평상시 <strong>스마트폰 사용 습관</strong>으로 인해 현대인의 시선은 이미 바닥을 향하는 것에 더욱 익숙해져 있습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-[#f5f5f7] rounded-[2.5rem] p-12 md:p-16 flex flex-col justify-between hover:scale-[1.02] transition-transform duration-500">
+                    <div>
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-8 shadow-sm">
+                            <i data-lucide="alert-circle" class="text-black w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold tracking-tight mb-4">상단 표지판의 무용지물</h3>
+                        <p class="text-lg text-[#86868b] leading-relaxed font-medium">
+                            높은 위치의 표지판은 연기나 정전 시 시야에서 완전히 사라집니다. 패닉 상태에서 발생하는 <strong>'터널 시야(Tunnel Vision)'</strong> 현상은 주변부 정보 인지를 더욱 철저히 차단합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 기초조사 (Foundation Research) 보강 -->
+            <div class="mt-32 pt-24 border-t border-gray-200/50">
+                <div class="text-center mb-20">
+                    <h2 class="text-[#86868b] font-bold tracking-widest text-xs sm:text-sm mb-4 uppercase">Field Research & Audit</h2>
+                    <h3 class="text-4xl font-bold tracking-tight mb-6">기초조사: 기존 방식은 왜 실패하는가?</h3>
+                    <p class="text-xl text-[#86868b] font-medium max-w-2xl mx-auto">
+                        실제 대피 장소 주변과 기존 기물(표지판, 맨홀)에 대한 조사를 통해, 현재의 인프라가 가진 치명적인 UX 결함을 분석했습니다.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- 기존 표지판의 한계 -->
+                    <div class="flex flex-col bg-white p-10 lg:p-12 rounded-[2.5rem] shadow-xl shadow-gray-100/50 border border-gray-100">
+                        <h4 class="text-2xl font-bold mb-8 pb-6 border-b border-gray-100 text-[#1d1d1f]">01. 기존 대피소 표지판의 한계</h4>
+                        <ul class="space-y-8 text-[#86868b] font-medium">
+                            <li class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center shrink-0 mr-5 mt-1">
+                                    <i data-lucide="map" class="w-5 h-5 text-red-500"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-black block text-lg mb-2">단절된 길찾기 (Broken Wayfinding)</strong>
+                                    <p class="leading-relaxed">목적지(대피소) 근처에 도달해야만 표지판을 볼 수 있습니다. 현재 내 위치에서 어디로 도망쳐야 하는지 알려주는 <strong>연속적인 방향 정보(Breadcrumbs)</strong>가 절대적으로 부족합니다.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center shrink-0 mr-5 mt-1">
+                                    <i data-lucide="eye-off" class="w-5 h-5 text-red-500"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-black block text-lg mb-2">취약한 설치 위치 (Dead Zone)</strong>
+                                    <p class="leading-relaxed">주로 전봇대 상단이나 건물 높은 벽면에 부착되어 있습니다. 화재로 인해 연기가 차오르거나 야간 정전이 발생하면 <strong>시야에서 가장 먼저 사라지는 사각지대</strong>입니다.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 기존 맨홀의 문제점 -->
+                    <div class="flex flex-col bg-white p-10 lg:p-12 rounded-[2.5rem] shadow-xl shadow-gray-100/50 border border-gray-100">
+                        <h4 class="text-2xl font-bold mb-8 pb-6 border-b border-gray-100 text-[#1d1d1f]">02. 기존 맨홀(기물)의 문제점</h4>
+                        <ul class="space-y-8 text-[#86868b] font-medium">
+                            <li class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center shrink-0 mr-5 mt-1">
+                                    <i data-lucide="eye" class="w-5 h-5 text-red-500"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-black block text-lg mb-2">보호색 현상 (Zero Visibility)</strong>
+                                    <p class="leading-relaxed">아스팔트와 동일한 <strong>무채색의 주철 재질</strong>로 도로와 완벽히 동화됩니다. 혼란스러운 재난 상황, 특히 비가 오거나 어두울 때 보행자의 주의를 전혀 끌지 못합니다.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center shrink-0 mr-5 mt-1">
+                                    <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-black block text-lg mb-2">시민을 배제한 정보 (Information Void)</strong>
+                                    <p class="leading-relaxed">'오수', '우수', '통신' 등 <strong>시설 관리자만을 위한 텍스트</strong>만 각인되어 있습니다. 수많은 시민이 밟고 지나가지만 정작 아무 의미도 전달하지 못하는 '죽은 인프라'입니다.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Data (Apple Pro Dark Style) -->
+    <section id="research" class="py-32 px-6 bg-black text-white rounded-[3rem] mx-4 sm:mx-8 mb-24">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">숫자로 증명된 디자인.</h2>
+                <p class="text-xl text-gray-400 font-medium">정량적 데이터가 제시하는 명확한 방향성.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+                <div class="text-center">
+                    <div class="text-[4rem] font-bold tracking-tighter mb-2 text-white">3.2<span class="text-3xl text-gray-400 font-medium">배</span></div>
+                    <p class="text-gray-400 font-medium">시각 탐색 시간 향상<br/><span class="text-sm">(고대비 컬러 적용)</span></p>
+                </div>
+                <div class="text-center">
+                    <div class="text-[4rem] font-bold tracking-tighter mb-2 text-white">20<span class="text-3xl text-gray-400 font-medium">m+</span></div>
+                    <p class="text-gray-400 font-medium">정보 인지 거리<br/><span class="text-sm">(반사도료 적용)</span></p>
+                </div>
+                <div class="text-center">
+                    <div class="text-[4rem] font-bold tracking-tighter mb-2 text-white">-0.8<span class="text-3xl text-gray-400 font-medium">초</span></div>
+                    <p class="text-gray-400 font-medium">의사결정 시간 단축<br/><span class="text-sm">(단순 심볼 인지)</span></p>
+                </div>
+                <div class="text-center">
+                    <div class="text-[4rem] font-bold tracking-tighter mb-2 text-white">-40<span class="text-3xl text-gray-400 font-medium">%</span></div>
+                    <p class="text-gray-400 font-medium">고립 공포감 감소<br/><span class="text-sm">(지면 안내의 심리적 효과)</span></p>
+                </div>
+            </div>
+
+            <!-- Evidence Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-[#1c1c1e] p-10 rounded-[2rem]">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">인지 심리학적 근거</h3>
+                    <p class="text-gray-400 mb-6 font-medium leading-relaxed">
+                        <strong class="text-white block mb-1">행동 유도성 (Affordance)</strong>
+                        지면은 인간이 가장 안정감을 느끼는 지지체입니다. 발밑의 정보를 따라가는 행위는 본능적이며 강력한 행동 유도를 일으킵니다.
+                    </p>
+                </div>
+                <div class="bg-[#1c1c1e] p-10 rounded-[2rem]">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">재난 공학적 근거</h3>
+                    <p class="text-gray-400 mb-6 font-medium leading-relaxed">
+                        <strong class="text-white block mb-1">Luminous Escape Path</strong>
+                        소방청 화재안전기준상 피난유도선은 지면 1m 이하가 가장 효율적입니다. 맨홀은 연기층 아래 최적의 위치입니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-20">
+            <div class="w-full lg:w-1/2">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">Life-Line<br/>Manhole.</h2>
+                <p class="text-xl text-[#86868b] font-medium leading-relaxed mb-12">
+                    도시의 죽은 공간을 생명을 살리는 인터페이스로 바꿉니다. 직관적이고, 명확하며, 포용적입니다.
+                </p>
+                
+                <div class="space-y-10">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 flex items-center"><i data-lucide="eye" class="w-5 h-5 mr-3 text-black"></i> 시각적 강조</h4>
+                        <p class="text-[#86868b] font-medium">Safety Orange / Neon Yellow 적용 및 축광/반사 도료를 사용하여 정전 시에도 스스로 빛을 냅니다.</p>
+                    </div>
+                    <hr class="border-gray-200">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 flex items-center"><i data-lucide="globe" class="w-5 h-5 mr-3 text-black"></i> 유니버설 디자인</h4>
+                        <p class="text-[#86868b] font-medium">ISO 7010 표준 '대피소' 픽토그램과 영문 병기로 언어의 장벽 없이 누구나 즉시 이해할 수 있습니다.</p>
+                    </div>
+                    <hr class="border-gray-200">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 flex items-center"><i data-lucide="navigation" class="w-5 h-5 mr-3 text-black"></i> 방향성 피드백</h4>
+                        <p class="text-[#86868b] font-medium">맨홀 중앙의 대형 화살표가 대피소 방향을 실시간 나침반처럼 정확히 지시합니다.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Minimalist Mockup Visualization -->
+            <div class="w-full lg:w-1/2 flex justify-center">
+                <div class="relative w-80 h-80 md:w-[28rem] md:h-[28rem] rounded-full bg-[#1d1d1f] flex flex-col items-center justify-center shadow-2xl ring-8 ring-gray-100 transform hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-2 rounded-full border-[2px] border-gray-600 border-dashed opacity-30"></div>
+                    
+                    <div class="z-20 flex flex-col items-center justify-center">
+                        <i data-lucide="arrow-up" class="text-yellow-400 w-16 h-16 mb-4"></i>
+                        <div class="bg-yellow-400 rounded-2xl p-4 mb-4">
+                            <i data-lucide="person-standing" class="text-black w-10 h-10"></i>
+                        </div>
+                        <h1 class="text-white font-bold text-3xl tracking-widest mt-2">대피소</h1>
+                        <h2 class="text-gray-400 font-semibold text-sm tracking-widest mt-1">SHELTER</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operation & Failsafe Section -->
+    <section id="failsafe" class="py-32 px-6 bg-[#f5f5f7]">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-[#86868b] font-bold tracking-widest text-xs sm:text-sm mb-4 uppercase">Operation & Failsafe</h2>
+                <h3 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">치명적 오류를 원천 차단하는 설계.</h3>
+                <p class="text-xl text-[#86868b] font-medium max-w-2xl mx-auto">
+                    방향을 지시하는 기물의 가장 큰 리스크는 '오정렬'입니다. 하수도 유지보수 작업 후 맨홀 뚜껑이 잘못 닫히는 휴먼 에러를 구조적, 시스템적으로 방지합니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Failsafe 1 -->
+                <div class="bg-white rounded-[2.5rem] p-10 shadow-sm hover:scale-[1.02] transition-transform duration-500 border border-gray-100">
+                    <div class="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 border border-gray-100">
+                        <i data-lucide="lock" class="text-black w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">비대칭 결합 홈 설계</h4>
+                    <p class="text-[#86868b] font-medium leading-relaxed">
+                        맨홀 프레임과 뚜껑에 특정 각도에서만 맞물리는 '비대칭 홈(Notch)'을 설계하여, 오직 정확한 방향으로만 뚜껑이 완전히 닫히는 물리적 락(Lock)을 적용합니다.
+                    </p>
+                </div>
+
+                <!-- Failsafe 2 -->
+                <div class="bg-white rounded-[2.5rem] p-10 shadow-sm hover:scale-[1.02] transition-transform duration-500 border border-gray-100">
+                    <div class="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 border border-gray-100">
+                        <i data-lucide="target" class="text-black w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">직관적 정렬 마커</h4>
+                    <p class="text-[#86868b] font-medium leading-relaxed">
+                        도로에 고정된 외부 프레임과 회전하는 뚜껑 가장자리에 고대비 색상의 '정렬선(Alignment Line)'을 그어, 작업자가 눈으로 영점(Zero-point)을 즉시 맞출 수 있게 합니다.
+                    </p>
+                </div>
+
+                <!-- Failsafe 3 -->
+                <div class="bg-white rounded-[2.5rem] p-10 shadow-sm hover:scale-[1.02] transition-transform duration-500 border border-gray-100">
+                    <div class="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 border border-gray-100">
+                        <i data-lucide="smartphone-nfc" class="text-black w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">스마트 검수 시스템</h4>
+                    <p class="text-[#86868b] font-medium leading-relaxed">
+                        뚜껑 내부에 NFC 태그를 내장합니다. 작업 완료 후 전용 앱으로 태깅하면 스마트폰의 나침반 센서가 방향 일치 여부를 자동 검수하여 서버로 전송합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 text-center border-t border-gray-200 mt-20">
+        <p class="text-[#86868b] font-medium text-sm">© 2024 Public UX Design Portfolio. Designed for Impact.</p>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
