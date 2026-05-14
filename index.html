@@ -19,7 +19,7 @@
         }
     </style>
 </head>
-<body class="min-h-screen selection:bg-black selection:text-white">
+<body class="min-h-screen selection:bg-black selection:text-white relative">
 
     <!-- Navigation (Apple Style Blur) -->
     <nav class="fixed w-full bg-white/70 backdrop-blur-lg border-b border-gray-200/50 z-50 transition-all duration-300">
@@ -48,14 +48,16 @@
     </section>
 
     <!-- [사용자 교체용] 왜곡 방지 이미지 플레이스홀더 1 -->
-    <!-- object-cover 클래스가 적용되어 있어 어떤 비율의 사진을 넣어도 찌그러지지 않습니다. -->
     <section class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-32">
-        <div class="relative w-full h-[50vh] md:h-[70vh] rounded-[2.5rem] overflow-hidden bg-gray-200 shadow-2xl">
+        <div class="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden bg-gray-200 shadow-2xl group cursor-pointer">
             <img 
                 src="./manhole1.jpg" 
                 alt="메인 프로젝트 이미지" 
-                class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 expandable-image"
             />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 flex items-center justify-center pointer-events-none">
+                <i data-lucide="zoom-in" class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 w-12 h-12 drop-shadow-lg"></i>
+            </div>
         </div>
     </section>
 
@@ -320,12 +322,15 @@
             </div>
 
             <!-- [사용자 교체용] 왜곡 방지 이미지 플레이스홀더 2 -->
-            <div class="relative w-full h-[40vh] md:h-[50vh] rounded-[2.5rem] overflow-hidden bg-gray-200 shadow-xl mb-20 max-w-5xl mx-auto">
+            <div class="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden bg-gray-200 shadow-xl mb-20 max-w-5xl mx-auto group cursor-pointer">
                 <img 
                     src="./manhole2.jpg" 
                     alt="유지보수 및 오정렬 방지 설계 이미지" 
-                    class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 expandable-image"
                 />
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 flex items-center justify-center pointer-events-none">
+                    <i data-lucide="zoom-in" class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 w-12 h-12 drop-shadow-lg"></i>
+                </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -359,9 +364,70 @@
         <p class="text-[#86868b] font-medium text-sm">© 2024 Public UX Design Portfolio. Designed for Impact.</p>
     </footer>
 
-    <!-- Initialize Lucide Icons -->
+    <!-- Fullscreen Image Modal -->
+    <div id="imageModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <button id="closeModalBtn" class="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors z-50 p-2">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <img id="modalImage" src="" alt="확대된 이미지" class="max-w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-2xl scale-95 transition-transform duration-300 pointer-events-none">
+    </div>
+
+    <!-- Initialize Lucide Icons & Script for Modal -->
     <script>
         lucide.createIcons();
+
+        // Image Modal Logic
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeBtn = document.getElementById('closeModalBtn');
+        const expandableImages = document.querySelectorAll('.expandable-image');
+
+        const openModal = (src) => {
+            modalImage.src = src;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            // Slight delay to allow display:flex to apply before animating opacity
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalImage.classList.remove('scale-95');
+                modalImage.classList.add('scale-100');
+            }, 10);
+        };
+
+        const closeModal = () => {
+            modal.classList.add('opacity-0');
+            modalImage.classList.remove('scale-100');
+            modalImage.classList.add('scale-95');
+            // Wait for transition to finish before hiding element
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                modalImage.src = '';
+            }, 300);
+        };
+
+        expandableImages.forEach(img => {
+            // Parent div triggers the click to make the whole container clickable
+            img.parentElement.addEventListener('click', () => {
+                openModal(img.src);
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        // Close on background click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
     </script>
 </body>
 </html>
