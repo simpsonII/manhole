@@ -31,6 +31,7 @@
                 <a href="#research" class="hover:text-blue-600 transition-colors">데이터 분석</a>
                 <a href="#solution" class="hover:text-blue-600 transition-colors">솔루션</a>
                 <a href="#failsafe" class="hover:text-blue-600 transition-colors">유지보수</a>
+                <a href="#gallery" class="hover:text-blue-600 transition-colors">갤러리</a>
             </div>
         </div>
     </nav>
@@ -359,8 +360,59 @@
         </div>
     </section>
 
+    <!-- Additional Gallery Section -->
+    <section id="gallery" class="py-32 px-6 bg-white border-t border-gray-200/50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-[#86868b] font-bold tracking-widest text-xs sm:text-sm mb-4 uppercase">Design Variations</h2>
+                <h3 class="text-4xl font-bold tracking-tight mb-6">다양한 환경을 고려한 디자인 제안</h3>
+            </div>
+
+            <!-- 3 Columns Grid for Additional Images -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Gallery Image 1 (manhole3.jpg) -->
+                <div class="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden bg-gray-200 shadow-xl group cursor-pointer">
+                    <img 
+                        src="./manhole3.jpg" 
+                        alt="맨홀 디자인 베리에이션 1" 
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 expandable-image"
+                    />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 flex items-center justify-center pointer-events-none">
+                        <i data-lucide="zoom-in" class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 w-12 h-12 drop-shadow-lg"></i>
+                    </div>
+                </div>
+
+                <!-- Gallery Image 2 (manhole4.jpg) -->
+                <div class="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden bg-gray-200 shadow-xl group cursor-pointer">
+                    <img 
+                        src="./manhole4.jpg" 
+                        alt="맨홀 디자인 베리에이션 2" 
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 expandable-image"
+                    />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 flex items-center justify-center pointer-events-none">
+                        <i data-lucide="zoom-in" class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 w-12 h-12 drop-shadow-lg"></i>
+                    </div>
+                </div>
+
+                <!-- Gallery Image 3 (manhole5.jpg) -->
+                <div class="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden bg-gray-200 shadow-xl group cursor-pointer">
+                    <img 
+                        src="./manhole5.jpg" 
+                        alt="맨홀 디자인 베리에이션 3" 
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 expandable-image"
+                    />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 flex items-center justify-center pointer-events-none">
+                        <i data-lucide="zoom-in" class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 w-12 h-12 drop-shadow-lg"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="py-12 text-center border-t border-gray-200 mt-20">
+    <footer class="py-12 text-center border-t border-gray-200 bg-gray-50">
         <p class="text-[#86868b] font-medium text-sm">© 2024 Public UX Design Portfolio. Designed for Impact.</p>
     </footer>
 
